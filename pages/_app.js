@@ -10,7 +10,7 @@ const infuraId = process.env.NEXT_PUBLIC_INFURA_ID;
 
 // Pick chains
 const chains = defaultChains;
-const defaultChain = chain.mainnet;
+const defaultChain = chain.rinkeby;
 
 // Set up connectors
 const connectors = ({ chainId }) => {
