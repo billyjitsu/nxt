@@ -5,6 +5,7 @@ import {
   useSigner,
   useProvider,
 } from "wagmi";
+import { useEffect } from "react";
 
 const modal = ( { setModalOn }) => {
   const [{ data, error }, connect] = useConnect();
@@ -16,6 +17,10 @@ const modal = ( { setModalOn }) => {
   const handleOKClick = () => {
     setModalOn(false);
 }
+
+useEffect(() => {
+  console.log({ connectedInModal: data.connected })
+}, [data])
 
   return (
     <div className="bg-black bg-opacity-50 absolute inset-0 flex justify-center items-center z-50">

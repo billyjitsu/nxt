@@ -4,13 +4,27 @@ import { InjectedConnector } from 'wagmi/connectors/injected';
 import { WalletConnectConnector } from 'wagmi/connectors/walletConnect';
 import { WalletLinkConnector } from 'wagmi/connectors/walletLink';
 import { providers } from 'ethers';
+import Script from 'next/script';
 
 // Get environment variables
 const infuraId = process.env.NEXT_PUBLIC_INFURA_ID;
 
+/*
+const gnosisChain = { id: 100,
+  name: 'Gnosis',
+  rpcUrls: ['rpc_url'],
+  testnet: false, }
+
+// Pick chains
+const chains = [...defaultChains, gnosisChain];
+const defaultChain = gnosisChain ;
+*/
+
+
 // Pick chains
 const chains = defaultChains;
 const defaultChain = chain.rinkeby;
+
 
 // Set up connectors
 const connectors = ({ chainId }) => {
@@ -60,6 +74,7 @@ function MyApp({ Component, pageProps }) {
       webSocketProvider={webSocketProvider}
     >
       <Component {...pageProps} />
+      <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     </Provider>
   );
 }

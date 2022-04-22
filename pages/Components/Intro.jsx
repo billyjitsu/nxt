@@ -9,7 +9,7 @@ const Intro = () => {
       <div className="grid grid-cols-12 ">
         <div className="col-span-5 sm:col-span-12 flex items-center justify-center pt-5">
           <div>
-            <Image src={ethlogo} alt="ethlogo" />
+          <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_jydl0igx.json"  background="transparent"  speed="1"  loop  autoplay></lottie-player>
           </div>
         </div>
 

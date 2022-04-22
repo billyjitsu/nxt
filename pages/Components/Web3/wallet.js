@@ -5,7 +5,7 @@ import {
   useSigner,
   useProvider,
 } from "wagmi";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { toHex, truncateAddress } from "./tools/walletTool";
 import Modal from "./tools/modal";
 
@@ -22,7 +22,12 @@ const wallet = () => {
     setModalOn(true)
   }
 
+  useEffect(() => {
+    console.log({ connected, modalOn });
+  }, [connected, modalOn]);
+
   if(connected && !modalOn) {
+
     return (
         <div>
             <button className="text-white bg-blue-400 rounded-full px-4 py-2 font-semibold sub-text">{`${truncateAddress(
@@ -44,8 +49,6 @@ const wallet = () => {
       );
   } 
 
-
-
   return (
     <div>
       <button className="text-white bg-blue-400 rounded-full px-4 py-2 font-semibold" onClick={clicked}>
@@ -55,6 +58,7 @@ const wallet = () => {
     </div>
     
   );
+  
 };
 
 export default wallet;
